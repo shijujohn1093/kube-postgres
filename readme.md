@@ -41,4 +41,10 @@ Password for user postgresadmin1:
 psql (10.4)
 Type "help" for help.
   
-postgresdb=#
+# For deletion of PostgreSQL resources, we need to use below commands.
+$ kubectl delete service postgres 
+$ kubectl delete deployment postgres
+$ kubectl delete configmap postgres-config
+$ kubectl delete persistentvolumeclaim postgres-pv-claim
+$ kubectl delete persistentvolume postgres-pv-volume
+
