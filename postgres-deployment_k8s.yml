@@ -23,6 +23,9 @@ spec:
               name: postgredb
         - name: adminer
           image: adminer
+          envFrom:
+            - configMapRef:
+                name: postgres-config
           ports:
             - containerPort: 8080
       volumes:
