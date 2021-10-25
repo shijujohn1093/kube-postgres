@@ -59,3 +59,9 @@ psql -h 34.67.177.44 -U postgresadmin --password -p 30695 postgresdb
 psql -h 10.60.4.191 -U postgresadmin --password  -p 30695 postgresdb
 
 
+
+psql -h localhost -U postgresadmin --password -p 30432 postgresdb
+psql -h 10.48.14.8 -U postgresadmin --password -p 30432 postgresdb
+
+
+
