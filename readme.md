@@ -43,6 +43,7 @@ Type "help" for help.
 
 
   
+
 # For deletion of PostgreSQL resources, we need to use below commands.
 kubectl delete service postgres
 kubectl delete service postgresadminer
@@ -51,10 +52,16 @@ kubectl delete configmap postgres-config
 kubectl delete persistentvolumeclaim postgres-pv-claim
 kubectl delete persistentvolume postgres-pv-volume
 
+# create all in one go 
+kubectl create -f postgres-configmap_k8s.yml 
+kubectl create -f postgres-storage_k8s.yml 
+kubectl create -f postgres-deployment_k8s.yml 
+kubectl create -f postgres-service_k8s.yml
+kubectl create -f postgres-service_k8s.yml
 
 
-Open a shell inside container
 
+# Open a shell inside container
 $ POD=`kubectl get pods -l app=postgres | grep Running | awk '{print $1}'`
 $ kubectl exec -it $POD bash
 
