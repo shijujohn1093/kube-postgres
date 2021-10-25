@@ -57,7 +57,7 @@ kubectl create -f postgres-configmap_k8s.yml
 kubectl create -f postgres-storage_k8s.yml 
 kubectl create -f postgres-deployment_k8s.yml 
 kubectl create -f postgres-service_k8s.yml
-kubectl create -f postgres-service_k8s.yml
+kubectl create -f postgres-service_lb_k8s.yml
 
 
 
