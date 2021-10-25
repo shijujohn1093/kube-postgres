@@ -54,8 +54,8 @@ kubectl delete persistentvolume postgres-pv-volume
 
 
 
-
-psql -h 34.67.177.44 -U postgresadmin1 --password -p 30695 postgresdb
-psql -h 10.60.4.191 -U postgresadmin1 --password admin123 -p 30695 postgresdb
+psql -h localhost -U postgresadmin --password -p 30695 postgresdb
+psql -h 34.67.177.44 -U postgresadmin --password -p 30695 postgresdb
+psql -h 10.60.4.191 -U postgresadmin --password  -p 30695 postgresdb
 
 
