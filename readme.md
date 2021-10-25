@@ -53,15 +53,20 @@ kubectl delete persistentvolume postgres-pv-volume
 
 
 
+Open a shell inside container
 
-psql -h localhost -U postgresadmin --password -p 30695 postgresdb
-psql -h 34.67.177.44 -U postgresadmin --password -p 30695 postgresdb
-psql -h 10.60.4.191 -U postgresadmin --password  -p 30695 postgresdb
+$ POD=`kubectl get pods -l app=postgres | grep Running | awk '{print $1}'`
+$ kubectl exec -it $POD bash
+
+
+psql -h localhost -U postgresadmin --password -p 30005 postgresdb
 
 
 
-psql -h localhost -U postgresadmin --password -p 30432 postgresdb
-psql -h 10.48.14.8 -U postgresadmin --password -p 30432 postgresdb
+# Get into container inside port 
+$ kubectl exec -it nginx -c sidecar -- /bin/sh
 
+
+https://www.youtube.com/watch?v=5cNrTU6o3Fw&t=29
 
 
