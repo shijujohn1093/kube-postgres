@@ -45,7 +45,7 @@ Type "help" for help.
   
 # For deletion of PostgreSQL resources, we need to use below commands.
 kubectl delete service postgres
-kubectl delete service postgreslb
+kubectl delete service postgresadminer
 kubectl delete deployment postgres
 kubectl delete configmap postgres-config
 kubectl delete persistentvolumeclaim postgres-pv-claim
