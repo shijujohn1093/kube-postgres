@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: postgresadminer
+  name: postgres-lb-svc
   labels:
     app: postgres
 spec:

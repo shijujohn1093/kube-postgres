@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:14.0
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: postgres-config
+        - name: adminer
+          image: adminer
+          envFrom:
+            - configMapRef:
+                name: postgres-config
+          ports:
+            - containerPort: 8080
+  selector:
+    matchLabels:
+      app: postgres
